@@ -5,14 +5,12 @@ from flask_socketio import SocketIO, emit
 import time
 import threading
 from typing import List
+from dotenv import load_dotenv
+import os
 
-
-#ORGANIZATION_ID = 'npagecoveocompurplestingray22mcumbr'
-ORGANIZATION_ID = 'dmattetestingdeletefieldsd1rmvqke'
-COVEO_API_URL = 'https://platform.cloud.coveo.com/rest/organizations/'+ORGANIZATION_ID+'/indexes/fields'
-#API_KEY ='xxc8a08e11-b69f-41d4-908e-23fd37d79b9e'
-API_KEY = 'xx74db816b-e08f-402f-b208-010ca7ac6837'
-#API_KEY = 'xxa1c6ffba-a769-4773-94ff-c875f495334e'
+load_dotenv()
+API_KEY = os.getenv("API_KEY")
+ORG_ID = os.getenv("ORGANIZATION_ID")
 
 headers = {
     'Authorization': 'Bearer '+API_KEY,
